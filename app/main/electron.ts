@@ -17,6 +17,7 @@ function createWindow() {
     webPreferences: {
       devTools: true,
       nodeIntegration: true, // 注入node模块
+      // contextIsolation: false,
     }
   });
   if (isDev()) {
