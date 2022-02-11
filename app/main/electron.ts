@@ -2,12 +2,17 @@
  * @desc electron 主入口
  */
 import path from 'path';
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 
 function isDev() {
   return process.env.NODE_ENV === 'development';
 }
 
+const ROOT_PATH = path.join(app.getAppPath(), '../');
+
+ipcMain.on('get-root-path', (event, arg) => {
+  event.reply('reply-root-path', ROOT_PATH);
+});
 
 function createWindow() {
   // 创建浏览器窗口
@@ -17,7 +22,6 @@ function createWindow() {
     webPreferences: {
       devTools: true,
       nodeIntegration: true, // 注入node模块
-      // contextIsolation: false,
     }
   });
   if (isDev()) {
