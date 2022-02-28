@@ -1,3 +1,4 @@
+
 module.exports = {
   presets: [
     '@babel/preset-env', // 👉 根据配置的目标浏览器或者运行环境，选择对应的语法包，从而将代码进行转换
@@ -15,6 +16,7 @@ module.exports = {
       }
     ],
     [
+      // css-modules
       'babel-plugin-react-css-modules',
       {
         exclude: 'node_modules',
