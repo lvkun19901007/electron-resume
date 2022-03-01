@@ -70,3 +70,5 @@ function MyButton({
     </div>
   )
 }
+
+export default MyButton;
