@@ -1,8 +1,17 @@
-const globalModel = {
+export interface GStore {
+  /**
+   * @description 项目路径
+   */
+  rootPath: string;
+  appName: string;
+}
+
+const globalModel: TSRcReduxModel.Props<GStore> = {
   namespace: 'globalModel',
   openSeamlessImmutable: true,
   state: {
-    appName: '简历应用平台',
+    appName: 'appName',
+    rootPath: '',
   }
 };
 export default globalModel;
